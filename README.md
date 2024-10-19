@@ -1,25 +1,23 @@
 # Task Management Web App
 
-This project is a task management web application built using **Vite** and **React**. It allows users to manage tasks, update preferences, and navigate through a professional UI. The app integrates **Clerk** for authentication, **Redux** for state management, and **Tailwind CSS** & **ShadcnUI** for styling.
+This project is a book showcasing web application built using **Vite** and **React** and **Tailwind CSS** for styling. It allows users to search books and filter books based on genres/topic .
 
 ## Features
 
-- User authentication using Clerk
-- Task management (CRUD operations)
-- User preferences management
-- Sorting and filtering tasks
-- State management using Redux
-- Dark/Light theme support
-- Professional UI using Tailwind CSS and ShadcnUI
+- Showing books.
+- Caching Data for better user experience
+- Using tanstack/query for better data fetching experience and state management.
+- Storing user preference like searched terms and selected genres/topic
+- Showing pagination for comfortable user navigation to different pages
+- Fully mobile responsive
+- Clean UI
 
 ## Technologies Used
 
 - **Vite** for fast development
 - **React** for component-based architecture
-- **Redux** for state management
-- **Clerk** for authentication
+- **Context api and Tanstack/query** for state management
 - **Tailwind CSS** for styling
-- **ShadcnUI** for UI components
 - **Axios** for API requests
 
 ## Setup Instructions
@@ -34,11 +32,6 @@ Using **npm**:
 npm install
 
 ```
-
-### Set Up Environment Variables
-
-- VITE_ENVIRONMENT=development
-- VITE_CLERK_FRONTEND_API=<your-clerk-frontend-api>
 
 ### Start the Development Server
 
@@ -55,4 +48,5 @@ npm run build
 ```
 
 ### License
+
 This `README.md` provides a detailed guide to setting up the project with the necessary steps included for installation, environment setup, and more.
