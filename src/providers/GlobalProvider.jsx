@@ -1,4 +1,5 @@
 import React, { Component, createContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
@@ -30,7 +31,6 @@ const GlobalProvider = ({ children }) => {
     localStorage.setItem("totalQuantity", newTotalQuantity);
   }, [wishList]);
 
-
   // Side effect for search, genre, page
   // Save search term to localStorage
   useEffect(() => {
@@ -52,7 +52,6 @@ const GlobalProvider = ({ children }) => {
     setPage(1);
   }, [search, genre]);
 
-
   // Wishlist functionality
   const addToWishList = (item) => {
     // Check if the item is already in the wishList
@@ -66,6 +65,7 @@ const GlobalProvider = ({ children }) => {
       setWishList((prevWishList) =>
         prevWishList.filter((wishlistItem) => wishlistItem.id !== item.id)
       );
+      toast.error("Removed from wishlist!");
     } else {
       // If the item is not in the wishList, add it
       setWishList(
@@ -76,9 +76,10 @@ const GlobalProvider = ({ children }) => {
           localStorage.setItem("wishList", JSON.stringify(wishList));
         }
       );
+      toast.success("Added to the wishlist!");
     }
   };
-// Check the book is in wishlist already.
+  // Check the book is in wishlist already.
   const isInWishList = (itemId) => {
     const isInCart = wishList.find((item) => item.id === itemId);
     return isInCart;

@@ -7,6 +7,7 @@ import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import GlobalProvider from "./providers/GlobalProvider";
+import { Toaster } from "react-hot-toast";
 
 // Initialize TanStack Query's QueryClient with default options
 const queryClient = new QueryClient({
@@ -42,6 +43,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <QueryClientProvider client={queryClient}>
         <GlobalProvider>
           <App />
+          <Toaster></Toaster>
         </GlobalProvider>
       </QueryClientProvider>
     </BrowserRouter>
